@@ -11,6 +11,7 @@ fn normalize_url(input: String) -> Result<String, String> {
   }
 }
 
+#[tauri::command]
 fn open_app_window(window: Window, label: String, url: String) -> Result<(), String> {
   let app_handle = window.app_handle();
   let final_url = normalize_url(url)?;
